@@ -52,7 +52,7 @@ end
 # sorted by heat level from lowest to highest
 def sort_by_heat(spicy_foods)
   # your code here
-  hottest_food = spicy_foods.sort_by do 
+    spicy_foods.sort_by do |food|
     food[:heat_level]
   end
 end
@@ -71,8 +71,10 @@ end
 # the average heat level of all the spicy foods in the array
 def average_heat_level(spicy_foods)
   # your code here
-  heat_levels = spicy_foods.map { |food| food[:heat_level] }
-  heat_levels.sum / heat_levels.length
+  total_heat_level = 0
+  spicy_foods.each do |food|
+    total_heat_level += food[:heat_level]
   end
-  average_heat_level(spicy_foods)
+  total_heat_level / spicy_foods.length
 end
+
